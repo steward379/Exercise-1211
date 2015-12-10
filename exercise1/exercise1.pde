@@ -9,12 +9,11 @@ void setup()
 void draw()
 {
   background(255);
-
-  if (!ghost.isHitByMouse()) {
+  if (ghost.isHitByMouse() && mousePressed == true) {
+    ghost.dead();
+  }
+  else{
     ghost.move();
     ghost.draw();
-  }
-  else {
-    ghost.dead();
   }
 }
